@@ -28,8 +28,8 @@ def test(model_name, gpu_id, vol_size=(160,192,224), nf_enc=[16,32,32,32], nf_de
     # specify the # of channels here, but the load_model is not working with the custom loss...
     """  
 
-	gpu = '/gpu:' + str(gpu_id)
-    os.environ["CUDA_VISIBLE_DEVICES"] = str(gpu_id)
+	gpu = '/gpu:0' #+ str(gpu_id)
+	os.environ["CUDA_VISIBLE_DEVICES"] = '0' #str(gpu_id)
 
 	# Anatomical labels we want to evaluate
 	labels = sio.loadmat('../data/labels.mat')['labels'][0]
